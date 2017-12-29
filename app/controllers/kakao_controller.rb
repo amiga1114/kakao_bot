@@ -26,11 +26,11 @@ class KakaoController < ApplicationController
       image = true
       url = "http://thecatapi.com/api/images/get?format=xml&type=jpg"
       cat_xml = RestClient.get(url)
-      doc = Nokogiri::xml(cat_xml)
+      doc = Nokogiri::XML(cat_xml)
       cat_url = doc.xpath("//url").text
     else
       return_text = "nothing"
-
+    end
     # return_message = {
     #   :message => {
     #     :text => user_message
