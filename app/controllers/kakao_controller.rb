@@ -22,6 +22,7 @@ class KakaoController < ApplicationController
       return_text = ["20층", "국수", "고기"].sample
     elsif user_message == "고양이"
       # 고양이 사진 보여주기
+      return_text = "야옹~"
       image = true
       url = "http://thecatapi.com/api/images/get?format=xml&type=jpg"
       cat_xml = RestClient.get(url)
