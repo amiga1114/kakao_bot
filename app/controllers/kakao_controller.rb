@@ -13,10 +13,23 @@ class KakaoController < ApplicationController
 
     user_message = params[:content]
 
+    # 로또
+
+    # 메뉴
+
+    # 다른 명령어가 들어왔을 때
+    # => ㅠㅠ 알 수 없는 명령어 입니다.
 
     return_message = {
       :message => {
         :text => user_message
+        if user_message == "로또"
+          :text => 1..45.sample(6).sort
+        elsif user_message == "메뉴"
+          menu = ["20층", "국수", "고기"]
+          :text => menu.sample(1)
+        else
+          :text => "nothing"
       }
     }
 
