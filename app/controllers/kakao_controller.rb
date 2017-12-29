@@ -55,7 +55,7 @@ class KakaoController < ApplicationController
 
     return_message = {
       :message => {
-        :text => return_text
+        :text => return_text,
       },
       :keyboard => home_keyboard
     }
